@@ -1,5 +1,5 @@
-# Script to rename a directory of video and subtitle files from crunchroll.com
-# for use with Kodi Media Center.
+# Script to rename a directory of video and subtitle files for use
+# with Kodi Media Center.
 
 import os
 import glob
