@@ -1,4 +1,8 @@
-# oop test
+# a2k
+# Version: 0.9 beta
+# Rename files using Python and regular expressions with easeself.
+# Originally titled Anime-to-Kodi.
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -11,9 +15,9 @@ class PathFrame(tk.Frame):
         path_entry = ttk.Entry(self, font=('Arial', 12))
         path_select_button = ttk.Button(self, text='Select', width=8)
 
-        path_label.pack(anchor='w', padx=5)
-        path_entry.pack(side='left', anchor='n', expand=1, fill='x', padx=5)
-        path_select_button.pack(side='right', anchor='n', padx=(0, 5))
+        path_label.pack(anchor='w')
+        path_entry.pack(side='left', anchor='n', expand=1, fill='x')
+        path_select_button.pack(side='right', anchor='n', padx=(5, 0))
 
 
 class TypeFrame(tk.Frame):
@@ -41,6 +45,7 @@ class TypeFrame(tk.Frame):
         type_entry.grid(row=0, column=5, padx=5)
         type_button.grid(row=0, column=6)
 
+
 class FilesFrame(tk.Frame):
     def __init__(self, root):
         super().__init__()
@@ -55,7 +60,7 @@ class FilesFrame(tk.Frame):
 
         files_label.grid(row=0, column=0, sticky='n')
         rename_label.grid(row=0, column=1, sticky='n')
-        files_list.grid(row=1, column=0, sticky='nesw')
+        files_list.grid(row=1, column=0, sticky='nesw', padx=(0, 5))
         rename_list.grid(row=1, column=1, sticky='nesw')
 
 
@@ -65,11 +70,11 @@ class RegexFrame(tk.Frame):
 
         regex_label = ttk.Label(self, text='Regex:', width=8)
         regex_entry = ttk.Entry(self, font=('Arial', 12))
-        regex_select_button = ttk.Button(self, text='Test', width=8)
+        clear_button = ttk.Button(self, text='Clear', width=8)
 
-        regex_label.pack(side='left', anchor='nw', padx=(5, 0))
+        regex_label.pack(side='left', anchor='nw')
         regex_entry.pack(side='left', anchor='n', expand=1, fill='x', padx=(0, 5))
-        regex_select_button.pack(padx=(0, 5))
+        clear_button.pack()
 
 
 class RenameFrame(tk.Frame):
@@ -78,11 +83,11 @@ class RenameFrame(tk.Frame):
 
         rename_label = ttk.Label(self, text='Rename:', width=8)
         rename_entry = ttk.Entry(self, font=('Arial', 12))
-        rename_select_button = ttk.Button(self, text='Execute', width=8)
+        test_button = ttk.Button(self, text='Test', width=8)
 
-        rename_label.pack(side='left', anchor='sw', padx=(5, 0))
+        rename_label.pack(side='left', anchor='sw')
         rename_entry.pack(side='left', anchor='n', expand=1, fill='x', padx=(0, 5))
-        rename_select_button.pack(padx=(0, 5))
+        test_button.pack()
 
 
 class RegexCalcFrame(tk.Frame):
@@ -137,6 +142,14 @@ class RegexCalcFrame(tk.Frame):
         calc_button20.grid(row=3, column=5, padx=2)
 
 
+class ExecuteFrame(tk.Frame):
+    def __init__(self, root):
+        super().__init__()
+
+        execute_button = tk.Button(self, text='Execute', bg='red', width=6)
+        execute_button.pack(side='right', anchor='w')
+
+
 root = tk.Tk()
 root.title('a2k')
 root.geometry('640x480+100+100')
@@ -149,12 +162,14 @@ frame_section03 = FilesFrame(root)
 frame_section04 = RegexFrame(root)
 frame_section05 = RenameFrame(root)
 frame_section06 = RegexCalcFrame(root)
+frame_section07 = ExecuteFrame(root)
 
-frame_section01.grid(row=0, column=0, sticky='new')
-frame_section02.grid(row=1, column=0, sticky='new')
-frame_section03.grid(row=2, column=0, sticky='nesw')
-frame_section04.grid(row=3, column=0, sticky='new')
-frame_section05.grid(row=4, column=0, sticky='new')
-frame_section06.grid(row=5, column=0, sticky='new')
+frame_section01.grid(row=0, column=0, sticky='new', padx=5, pady=5)
+frame_section02.grid(row=1, column=0, sticky='new', padx=5, pady=5)
+frame_section03.grid(row=2, column=0, sticky='nesw', padx=5, pady=5)
+frame_section04.grid(row=3, column=0, sticky='new', padx=5, pady=(5, 0))
+frame_section05.grid(row=4, column=0, sticky='new', padx=5, pady=(0, 5))
+frame_section06.grid(row=5, column=0, sticky='new', padx=5, pady=5)
+frame_section07.grid(row=6, column=0, sticky='new', padx=5, pady=5)
 
 root.mainloop()
