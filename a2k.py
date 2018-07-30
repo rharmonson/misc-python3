@@ -1,6 +1,6 @@
 # a2k
 # Version: 0.9 beta
-# Rename files using Python and regular expressions with easeself.
+# Rename files using Python and regular expressions with ease.
 # Originally titled Anime-to-Kodi.
 
 import tkinter as tk
