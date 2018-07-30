@@ -36,14 +36,14 @@ class TypeFrame(tk.Frame):
         video_chkbox.select()
         type_label = ttk.Label(self, text='Custom')
         type_entry = ttk.Entry(self, font=('Arial', 10))
-        type_button = ttk.Button(self, text='?', width=2)
+        help_type_button = ttk.Button(self, text='?', width=2)
 
         music_chkbox.grid(row=0, column=1, padx=5)
         photo_chkbox.grid(row=0, column=2, padx=5)
         video_chkbox.grid(row=0, column=3, padx=5)
         type_label.grid(row=0, column=4, padx=(15, 5))
         type_entry.grid(row=0, column=5, padx=5)
-        type_button.grid(row=0, column=6)
+        help_type_button.grid(row=0, column=6)
 
 
 class FilesFrame(tk.Frame):
@@ -114,12 +114,14 @@ class RegexCalcFrame(tk.Frame):
         calc_button18 = ttk.Button(self, text='b18', width=3)
         calc_button19 = ttk.Button(self, text='b19', width=3)
         calc_button20 = ttk.Button(self, text='b20', width=3)
+        calc_help_button = ttk.Button(self, text='?', width=3)
 
         calc_button01.grid(row=0, column=1, padx=2)
         calc_button02.grid(row=0, column=2, padx=2)
         calc_button03.grid(row=0, column=3, padx=2)
         calc_button04.grid(row=0, column=4, padx=2)
         calc_button05.grid(row=0, column=5, padx=2)
+        calc_help_button.grid(row=0, column=6, padx=2)
 
         calc_button06.grid(row=1, column=1, padx=2)
         calc_button07.grid(row=1, column=2, padx=2)
