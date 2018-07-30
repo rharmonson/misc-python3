@@ -94,7 +94,6 @@ class RegexCalcFrame(tk.Frame):
     def __init__(self, root):
         super().__init__()
 
-        calc_space = ttk.Label(self, width=8)
         calc_button01 = ttk.Button(self, text='b01', width=3)
         calc_button02 = ttk.Button(self, text='b02', width=3)
         calc_button03 = ttk.Button(self, text='b03', width=3)
@@ -116,25 +115,24 @@ class RegexCalcFrame(tk.Frame):
         calc_button19 = ttk.Button(self, text='b19', width=3)
         calc_button20 = ttk.Button(self, text='b20', width=3)
 
-        calc_space.grid(row=0, column=0,)
         calc_button01.grid(row=0, column=1, padx=2)
         calc_button02.grid(row=0, column=2, padx=2)
         calc_button03.grid(row=0, column=3, padx=2)
         calc_button04.grid(row=0, column=4, padx=2)
         calc_button05.grid(row=0, column=5, padx=2)
-        calc_space.grid(row=1, column=0,)
+
         calc_button06.grid(row=1, column=1, padx=2)
         calc_button07.grid(row=1, column=2, padx=2)
         calc_button08.grid(row=1, column=3, padx=2)
         calc_button09.grid(row=1, column=4, padx=2)
         calc_button10.grid(row=1, column=5, padx=2)
-        calc_space.grid(row=2, column=0,)
+
         calc_button11.grid(row=2, column=1, padx=2)
         calc_button12.grid(row=2, column=2, padx=2)
         calc_button13.grid(row=2, column=3, padx=2)
         calc_button14.grid(row=2, column=4, padx=2)
         calc_button15.grid(row=2, column=5, padx=2)
-        calc_space.grid(row=3, column=0,)
+
         calc_button16.grid(row=3, column=1, padx=2)
         calc_button17.grid(row=3, column=2, padx=2)
         calc_button18.grid(row=3, column=3, padx=2)
@@ -169,7 +167,7 @@ frame_section02.grid(row=1, column=0, sticky='new', padx=5, pady=5)
 frame_section03.grid(row=2, column=0, sticky='nesw', padx=5, pady=5)
 frame_section04.grid(row=3, column=0, sticky='new', padx=5, pady=(5, 0))
 frame_section05.grid(row=4, column=0, sticky='new', padx=5, pady=(0, 5))
-frame_section06.grid(row=5, column=0, sticky='new', padx=5, pady=5)
+frame_section06.grid(row=5, column=0, padx=5, pady=5)
 frame_section07.grid(row=6, column=0, sticky='new', padx=5, pady=5)
 
 root.mainloop()
