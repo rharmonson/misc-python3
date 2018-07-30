@@ -16,6 +16,31 @@ class PathFrame(tk.Frame):
         path_select_button.pack(side='right', anchor='n', padx=(0, 5))
 
 
+class TypeFrame(tk.Frame):
+    def __init__(self, root):
+        super().__init__()
+
+        mchkvar = tk.IntVar()
+        pchkvar = tk.IntVar()
+        vchkvar = tk.IntVar()
+        # Why is it necessary to assign value?
+        vchkvar = 1
+
+        music_chkbox = tk.Checkbutton(self, text='Music', variable=mchkvar)
+        photo_chkbox = tk.Checkbutton(self, text='Photo', variable=pchkvar)
+        video_chkbox = tk.Checkbutton(self, text='Video', variable=vchkvar)
+        video_chkbox.select()
+        type_label = ttk.Label(self, text='Custom')
+        type_entry = ttk.Entry(self, font=('Arial', 10))
+        type_button = ttk.Button(self, text='?', width=2)
+
+        music_chkbox.grid(row=0, column=1, padx=5)
+        photo_chkbox.grid(row=0, column=2, padx=5)
+        video_chkbox.grid(row=0, column=3, padx=5)
+        type_label.grid(row=0, column=4, padx=(15, 5))
+        type_entry.grid(row=0, column=5, padx=5)
+        type_button.grid(row=0, column=6)
+
 class FilesFrame(tk.Frame):
     def __init__(self, root):
         super().__init__()
@@ -112,22 +137,24 @@ class RegexCalcFrame(tk.Frame):
         calc_button20.grid(row=3, column=5, padx=2)
 
 
-
 root = tk.Tk()
 root.title('a2k')
-root.grid_rowconfigure(1, weight=1)
+root.geometry('640x480+100+100')
+root.grid_rowconfigure(2, weight=1)
 root.grid_columnconfigure(0, weight=1)
 
 frame_section01 = PathFrame(root)
-frame_section02 = FilesFrame(root)
-frame_section03 = RegexFrame(root)
-frame_section04 = RenameFrame(root)
-frame_section05 = RegexCalcFrame(root)
+frame_section02 = TypeFrame(root)
+frame_section03 = FilesFrame(root)
+frame_section04 = RegexFrame(root)
+frame_section05 = RenameFrame(root)
+frame_section06 = RegexCalcFrame(root)
 
 frame_section01.grid(row=0, column=0, sticky='new')
-frame_section02.grid(row=1, column=0, sticky='nesw')
-frame_section03.grid(row=2, column=0, sticky='new')
+frame_section02.grid(row=1, column=0, sticky='new')
+frame_section03.grid(row=2, column=0, sticky='nesw')
 frame_section04.grid(row=3, column=0, sticky='new')
 frame_section05.grid(row=4, column=0, sticky='new')
+frame_section06.grid(row=5, column=0, sticky='new')
 
 root.mainloop()
