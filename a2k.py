@@ -146,7 +146,7 @@ class ExecuteFrame(tk.Frame):
     def __init__(self, root):
         super().__init__()
 
-        execute_button = tk.Button(self, text='Execute', bg='red', width=6)
+        execute_button = ttk.Button(self, text='Execute', width=8)
         execute_button.pack(side='right', anchor='w')
 
 
