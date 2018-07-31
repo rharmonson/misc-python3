@@ -114,7 +114,7 @@ class RegexCalcFrame(tk.Frame):
         calc_button18 = ttk.Button(self, text='b18', width=3)
         calc_button19 = ttk.Button(self, text='b19', width=3)
         calc_button20 = ttk.Button(self, text='b20', width=3)
-        calc_help_button = ttk.Button(self, text='?', width=3)
+        calc_help_button = ttk.Button(self, text='?', width=2)
 
         calc_button01.grid(row=0, column=1, padx=2)
         calc_button02.grid(row=0, column=2, padx=2)
