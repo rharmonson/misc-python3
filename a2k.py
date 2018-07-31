@@ -30,19 +30,21 @@ class TypeFrame(tk.Frame):
         # Why is it necessary to assign value?
         vchkvar = 1
 
+        type_label = ttk.Label(self, text='File Type:')
         music_chkbox = tk.Checkbutton(self, text='Music', variable=mchkvar)
         photo_chkbox = tk.Checkbutton(self, text='Photo', variable=pchkvar)
         video_chkbox = tk.Checkbutton(self, text='Video', variable=vchkvar)
         video_chkbox.select()
-        type_label = ttk.Label(self, text='Custom')
-        type_entry = ttk.Entry(self, font=('Arial', 10))
+        custom_label = ttk.Label(self, text='Custom')
+        custom_entry = ttk.Entry(self, font=('Arial', 10))
         help_type_button = ttk.Button(self, text='?', width=2)
 
+        type_label.grid(row=0, column=0, padx=5)
         music_chkbox.grid(row=0, column=1, padx=5)
         photo_chkbox.grid(row=0, column=2, padx=5)
         video_chkbox.grid(row=0, column=3, padx=5)
-        type_label.grid(row=0, column=4, padx=(15, 5))
-        type_entry.grid(row=0, column=5, padx=5)
+        custom_label.grid(row=0, column=4, padx=(15, 5))
+        custom_entry.grid(row=0, column=5, padx=5)
         help_type_button.grid(row=0, column=6)
 
 
